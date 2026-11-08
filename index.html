@@ -1,207 +1,365 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naraharisetti Lokesh</title>
-<style>
-:root {
---glass-bg: rgba(255, 255, 255, 0.1);
---glass-border: rgba(255, 255, 255, 0.2);
---text-color: #ffffff;
---accent-color: #00d2ff;
-}
-​body {
-margin: 0;
-padding: 0;
-font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-color: var(--text-color);
-min-height: 100vh;
-overflow-x: hidden;
-position: relative;
-background: linear-gradient(-45deg, #138808, #ffffff, #ff9933);
-background-size: 400% 400%;
-animation: wave 10s ease infinite;
-}
-​@keyframes wave {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
-}
-​body::before {
-content: "";
-position: fixed;
-top: 0; left: 0; width: 100%; height: 100%;
-background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
-pointer-events: none;
-}
-​.container {
-position: relative;
-z-index: 1;
-max-width: 900px;
-margin: 0 auto;
-padding: 40px 20px;
-}
-​.glass-card {
-background: var(--glass-bg);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid var(--glass-border);
-border-radius: 30px;
-padding: 40px;
-margin-bottom: 30px;
-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-​header.glass-card { text-align: center; }
-​h1 {
-font-size: 3.5rem;
-margin: 0 0 10px 0;
-background: linear-gradient(90deg, #ffffff, var(--accent-color));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-​.title-job {
-font-size: 1.5rem;
-color: #ff9933;
-text-transform: uppercase;
-letter-spacing: 3px;
-margin-bottom: 25px;
-font-weight: 700;
-text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-​.contact-info {
-display: flex;
-justify-content: center;
-gap: 15px;
-font-size: 1.1rem;
-flex-wrap: wrap;
-margin-bottom: 20px;
-}
-​.contact-info span {
-background: rgba(0,0,0,0.4);
-padding: 10px 20px;
-border-radius: 50px;
-border: 1px solid rgba(255,255,255,0.2);
-}
-​.action-buttons {
-display: flex;
-justify-content: center;
-gap: 15px;
-flex-wrap: wrap;
-margin-top: 20px;
-}
-​.btn {
-padding: 12px 25px;
-border-radius: 50px;
-text-decoration: none;
-font-weight: bold;
-font-size: 1rem;
-transition: transform 0.3s, box-shadow 0.3s;
-display: flex;
-align-items: center;
-gap: 8px;
-color: #fff;
-border: none;
-cursor: pointer;
-}
-​.btn-wa { background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
-.btn-mail { background-color: #EA4335; box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4); }
-.btn-call { background-color: #0088cc; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4); }
-​.btn:hover {
-transform: translateY(-3px);
-filter: brightness(1.1);
-}
-​h2 { font-size: 2.2rem; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 15px; margin-top: 0; }
-p { line-height: 1.8; font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-​.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-.data-box { background: rgba(0,0,0,0.3); border-left: 4px solid #138808; padding: 25px; margin-bottom: 20px; border-radius: 0 20px 20px 0; }
-.data-box h3 { margin: 0 0 10px 0; color: #ff9933; font-size: 1.5rem; }
-​ul { padding-left: 20px; font-size: 1.2rem; }
-li { margin-bottom: 12px; }
-​.cta-box { text-align: center; margin-top: 30px; padding: 30px; background: rgba(19, 136, 8, 0.3); border-radius: 30px; border: 1px solid #138808; }
-.cta-button { display: inline-block; margin-top: 15px; padding: 15px 35px; background: linear-gradient(90deg, #ff9933, #138808); color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s; }
-.cta-button:hover { transform: scale(1.05); }
-​@media (max-width: 768px) {
-.grid-2 { grid-template-columns: 1fr; }
-h1 { font-size: 2.5rem; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naraharisetti Lokesh | Luxury Portfolio</title>
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-orange: #FF9933;
+            --accent-green: #138808;
+            --accent-blue: #00d2ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #070709;
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Luxury Flag Background */
+        .flag-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+            background: linear-gradient(-45deg, var(--accent-green), #070709, var(--accent-orange));
+            background-size: 400% 400%;
+            animation: luxuryWave 15s ease infinite;
+            filter: blur(40px);
+        }
+
+        @keyframes luxuryWave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtle Chakra Watermark */
+        .chakra-mark {
+            position: fixed;
+            top: 10%;
+            right: 5%;
+            width: 500px;
+            height: 500px;
+            border: 1px dashed rgba(0, 210, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+            animation: spinCW 120s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes spinCW { 100% { transform: rotate(360deg); } }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 36px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            transition: border-color 0.5s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 210, 255, 0.2);
+        }
+
+        header.glass-card {
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(0, 210, 255, 0.08), transparent 70%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 30%, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-job {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .contact-info span {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .btn-wa { background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.5); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2); }
+        .btn-mail { background: rgba(234, 67, 53, 0.15); border-color: rgba(234, 67, 53, 0.5); box-shadow: 0 10px 30px rgba(234, 67, 53, 0.2); }
+        .btn-call { background: rgba(0, 136, 204, 0.15); border-color: rgba(0, 136, 204, 0.5); box-shadow: 0 10px 30px rgba(0, 136, 204, 0.2); }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .data-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--accent-blue);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 0 24px 24px 0;
+            transition: background 0.3s ease;
+        }
+
+        .data-box:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .data-box h3 {
+            margin: 0 0 12px 0;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 24px;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            text-align: center;
+            margin-top: 50px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(0, 114, 255, 0.05));
+            border-radius: 36px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.1), transparent 70%);
+            animation: rotateslow 20s linear infinite;
+        }
+
+        @keyframes rotateslow { 100% { transform: rotate(360deg); } }
+
+        .cta-box h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 22px 50px;
+            background: linear-gradient(90deg, #00d2ff, #0072ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 210, 255, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 210, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            .glass-card { padding: 30px; }
+        }
+    </style>
 </head>
 <body>
-​<div class="container">
-<header class="glass-card">
-<h1>Naraharisetti Lokesh</h1>
-<div class="title-job">AI Developer & Data Specialist</div>
-<div class="contact-info">
-<span>📍 Bengaluru</span>
-<span>📞 +91 8096772870</span>
-</div>
-<div class="action-buttons">
-<a href="https://wa.me/918096772870" class="btn btn-wa" target="_blank">💬 WhatsApp</a>
-<a href="mailto:Naraharisettilokesh@mail.com" class="btn btn-mail">✉️ Email</a>
-<a href="tel:+918096772870" class="btn btn-call">📞 Call</a>
-</div>
-</header>
-​<section class="glass-card">
-<h2>Welcome to My Site</h2>
-<p>Transforming complex analytics into luxury digital experiences. As an expert App and Web Developer, I engineer high-performance dashboards, bespoke applications, and intelligent systems tailored to elevate your vision.</p>
-​<div class="cta-box">
-<h3>Ready to build something extraordinary?</h3>
-<p>Let's collaborate to bring your ideas to life with cutting-edge design and seamless functionality.</p>
-<a href="mailto:Naraharisettilokesh@mail.com" class="cta-button">Contact Me For Your Project</a>
-</div>
-</section>
-​<section class="glass-card">
-<h2>Professional Summary</h2>
-<p>High-impact AI Developer and Data Specialist focused on engineering intelligent data flows and luxury-grade web interfaces. Transforming complex analytics into seamless, automated executive solutions.</p>
-</section>
-​<section class="glass-card">
-<h2>Technical Expertise</h2>
-<div class="grid-2">
-<div>
-<div class="data-box">
-<h3>AI Architecture</h3>
-<p>Custom LLM integration, prompt engineering, and automated workflow logic.</p>
-</div>
-<div class="data-box">
-<h3>Data Systems</h3>
-<p>Advanced enterprise data modeling, pipeline automation, and real-time analytics.</p>
-</div>
-</div>
-<div>
-<div class="data-box">
-<h3>Full-Stack Development</h3>
-<p>Responsive, high-performance interfaces featuring advanced glassmorphism design.</p>
-</div>
-<div class="data-box">
-<h3>Executive Reporting</h3>
-<p>Automated generation of high-level visual dashboards and strategic insights.</p>
-</div>
-</div>
-</div>
-</section>
-​<section class="glass-card">
-<h2>Featured Projects</h2>
-<div class="data-box">
-<h3>AI Data Insights Engine</h3>
-<p>Architected an automated system processing complex data streams into executive-ready intelligence.</p>
-</div>
-<div class="data-box">
-<h3>Smart Interface Framework</h3>
-<p>Developed a responsive front-end utilizing intelligent back-end logic for streamlined operations.</p>
-</div>
-</section>
-​<section class="glass-card">
-<h2>Core Capabilities</h2>
-<ul>
-<li>Custom AI Web & Mobile Application Development</li>
-<li>Automated Enterprise Reporting Ecosystems</li>
-<li>Advanced Data Analytics & Visualization</li>
-<li>Strategic Technical Consulting</li>
-</ul>
-</section>
-</div>
-​</body>
+
+    <div class="flag-bg"></div>
+    <div class="chakra-mark"></div>
+
+    <div class="container">
+        <header class="glass-card">
+            <h1>Naraharisetti Lokesh</h1>
+            <div class="title-job">AI Developer & Data Specialist</div>
+            <div class="contact-info">
+                <span>📍 Bengaluru</span>
+                <span>📞 +91 8096772870</span>
+            </div>
+            <div class="action-buttons">
+                <a href="https://wa.me/918096772870" class="btn btn-wa" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.89 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.298-.149-1.763-.868-2.037-.967-.273-.099-.472-.148-.67.15-.197.297-.763.967-.937 1.164-.173.197-.347.223-.645.075-.298-.148-1.259-.463-2.397-1.482-.888-.791-1.484-1.768-1.658-2.067-.173-.298-.019-.458.131-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.694-1.671-.959-2.288-.261-.611-.525-.527-.69-.536-.178-.009-.383-.01-.588-.019s-.541.074-.825.372c-.284.298-1.083 1.057-1.083 2.579s1.11 2.988 1.263 3.187c.153.198 2.172 3.313 5.261 4.642 7.361 3.17 7.361 2.121 8.659 1.968 1.297-.153 4.023-1.654 4.585-3.249.562-1.595.562-2.961.388-3.259z"/></svg>
+                    WhatsApp
+                </a>
+                <a href="mailto:Naraharisettilokesh@mail.com" class="btn btn-mail">
+                    ✉️ Email
+                </a>
+                <a href="tel:+918096772870" class="btn btn-call">
+                    📞 Call
+                </a>
+            </div>
+        </header>
+
+        <section class="glass-card">
+            <h2>Welcome to My Site</h2>
+            <p>Transforming complex analytics into luxury digital experiences. As an expert App and Web Developer, I engineer high-performance dashboards, bespoke applications, and intelligent systems tailored to elevate your vision.</p>
+            
+            <div class="cta-box">
+                <h3>Ready to build something extraordinary?</h3>
+                <p>Let's collaborate to bring your ideas to life with cutting-edge design and seamless functionality.</p>
+                <a href="mailto:Naraharisettilokesh@mail.com" class="cta-button">Contact Me For Your Project</a>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2>Professional Summary</h2>
+            <p>High-impact AI Developer and Data Specialist focused on engineering intelligent data flows and luxury-grade web interfaces. Transforming complex analytics into seamless, automated executive solutions.</p>
+        </section>
+
+        <section class="glass-card">
+            <h2>Technical Expertise</h2>
+            <div class="grid-2">
+                <div>
+                    <div class="data-box">
+                        <h3>AI Architecture</h3>
+                        <p>Custom LLM integration, prompt engineering, and automated workflow logic.</p>
+                    </div>
+                    <div class="data-box">
+                        <h3>Data Systems</h3>
+                        <p>Advanced enterprise data modeling, pipeline automation, and real-time analytics.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="data-box">
+                        <h3>Full-Stack Development</h3>
+                        <p>Responsive, high-performance interfaces featuring advanced glassmorphism design.</p>
+                    </div>
+                    <div class="data-box">
+                        <h3>Executive Reporting</h3>
+                        <p>Automated generation of high-level visual dashboards and strategic insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2>Featured Projects</h2>
+            <div class="data-box">
+                <h3>AI Data Insights Engine</h3>
+                <p>Architected an automated system processing complex data streams into executive-ready intelligence.</p>
+            </div>
+            <div class="data-box">
+                <h3>Smart Interface Framework</h3>
+                <p>Developed a responsive front-end utilizing intelligent back-end logic for streamlined operations.</p>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2>Core Capabilities</h2>
+            <ul>
+                <li>Custom AI Web & Mobile Application Development</li>
+                <li>Automated Enterprise Reporting Ecosystems</li>
+                <li>Advanced Data Analytics & Visualization</li>
+                <li>Strategic Technical Consulting</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
 </html>
